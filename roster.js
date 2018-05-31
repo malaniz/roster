@@ -44,7 +44,10 @@ const data = [{
 }]
 
 function add(name, grade) {
-  const result = data.find(x => x.student.name === name)
+  const result = data.find(x => (
+    (x.student.name === name) &&
+    (x.grade === parseInt(grade))
+  ))
   if (result) {
     return false;
   }
